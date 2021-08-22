@@ -6,14 +6,16 @@ const searchEl = document.querySelector('.search');
 const searchInputEl = searchEl.querySelector('input');
 
 /*input 요소를 자체를 선택하지 않고 그 input 요소가 소속되어 있는 search라는 클래스를 가지고 있는
-div요소 아무곳이나 클릭해도 input이 focus가 된다.*/
+div요소 아무곳이나 클릭해도 input이 focus가 된다.
+즉, search클래스 부분을 누르면 input 부분도 포커스 돼서 창이 생긴다.*/
 searchEl.addEventListener('click',function(){
     searchInputEl.focus(); // 실제 검색 요소의 input 요소에 focus 하라는 뜻
 });
 
 searchInputEl.addEventListener('focus', function(){
+    // 클래스를 추가할 때는 .을 안붙여도 된다.
     searchEl.classList.add('focused');
-    // searchInputEl에 어떤 HTML의 속성을 지정할 때 쓰는 메소드
+    // setAttribute는 searchInputEl에 어떤 HTML의 속성을 지정할 때 쓰는 메소드
     searchInputEl.setAttribute('placeholder','통합검색');
 });
 
